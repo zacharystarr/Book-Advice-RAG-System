@@ -1,6 +1,39 @@
 # Book Advice RAG System
 
 
+## Text Chunking Module
+
+The Text Chunker module provides functionalities for breaking down text into smaller, more manageable units like paragraphs or sentences. This is particularly useful for subsequent processing in NLP pipelines, data analysis, or any application where text structure plays a crucial role in the processing logic.
+
+### Features
+
+- **Chunk by Paragraphs**: Splits text based on newline characters, useful for documents where paragraphs are well-defined.
+- **Chunk by Sentences**: Uses a period-based heuristic to identify sentence boundaries, ideal for processing prose or documents with standard punctuation.
+
+### Installation
+
+No external dependencies are required as this module uses only built-in Python functionality. Ensure you have Python 3.x installed.
+
+### Usage
+
+Import the module and use one of the functions to chunk text as needed:
+
+```python
+from text_chunker import chunk_text
+
+# Example text
+text = "Welcome to the Text Chunker. This tool is very helpful. Start using it today.\nNew paragraph starts here."
+
+# Get text chunked by sentences
+sentence_chunks = chunk_text(text, mode='sentence')
+print(sentence_chunks)
+
+# Get text chunked by paragraphs
+paragraph_chunks = chunk_text(text)
+print(paragraph_chunks)
+```
+
+
 ## PDF Text Extractor
 
 The `pdf_extractor.py` script is designed to automate the extraction of text from PDF files stored in a specified directory and save the extracted content as text files in another directory. This tool is especially useful for processing large batches of PDF documents where manual text extraction would be time-consuming and inefficient.
